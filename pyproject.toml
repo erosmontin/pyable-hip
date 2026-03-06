@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyable-hip"
+version = "0.1.0"
+description = "Hip-specific medical image analysis built on pyable"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "pyable",
+    "SimpleITK",
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+vtk = ["vtk"]
+full = ["vtk", "pyvista", "scikit-image", "pandas"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pyable_hip"]
